@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ülgüc — Berber Salonu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141414; --text:#eae6df; --muted:#8f8a82;
+    --accent:#b3341f; --line:#2b2b2b;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:'Work Sans', Arial, sans-serif; overflow-x:hidden;}
+  h1,.logo{font-family:'Bebas Neue', 'Work Sans', sans-serif; letter-spacing:1px;}
+  header{display:flex; justify-content:space-between; align-items:center; padding:22px 24px; max-width:880px; margin:0 auto; border-bottom:1px solid var(--line);}
+  .logo{font-size:1.5rem;}
+  nav a{color:var(--muted); text-decoration:none; margin-left:22px; font-size:0.9rem; position:relative;}
+  nav a::after{content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:var(--accent); transition:width .3s ease;}
+  nav a:hover{color:var(--text);}
+  nav a:hover::after{width:100%;}
+
+  .hero{padding:70px 24px; max-width:880px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:end; position:relative;}
+  .hero h1{font-size:clamp(2.2rem,8vw,4rem); font-weight:400; line-height:1.05;
+    clip-path:inset(0 100% 0 0); animation:reveal 1s cubic-bezier(.65,0,.15,1) forwards .1s;}
+  .hero .side{border-left:2px solid var(--accent); padding-left:20px; color:var(--muted); font-size:0.95rem;
+    opacity:0; transform:translateX(12px); animation:slideIn .7s ease forwards .8s;}
+  @keyframes reveal{to{clip-path:inset(0 0 0 0);}}
+  @keyframes slideIn{to{opacity:1; transform:translateX(0);}}
+
+  .razor-line{max-width:880px; margin:0 auto; padding:0 24px;}
+  .razor-line svg{width:100%; height:20px; display:block;}
+  .razor-line path{stroke:var(--accent); stroke-width:2; fill:none; stroke-dasharray:600; stroke-dashoffset:600; animation:draw 1.4s ease forwards .3s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  section{padding:56px 24px; max-width:880px; margin:0 auto; border-bottom:1px solid var(--line);}
+  .section-title{font-size:1.6rem; font-weight:600; margin-bottom:28px;}
+
+  .reveal-el{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal-el.in-view{opacity:1; transform:translateY(0);}
+
+  .price-row{display:flex; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--line); transition:padding-left .25s ease;}
+  .price-row:hover{padding-left:10px; border-color:var(--accent);}
+  .price-row:last-child{border-bottom:none;}
+  .price-row .name{font-weight:600;}
+  .price-row .time{color:var(--muted); font-size:0.85rem; display:block;}
+  .price-row .amount{color:var(--accent); font-weight:700; white-space:nowrap;}
+
+  .book-btn{display:inline-block; margin-top:30px; padding:14px 30px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; transition:transform .25s ease, box-shadow .25s ease;}
+  .book-btn:hover{transform:translateY(-2px); box-shadow:0 10px 20px -8px rgba(179,52,31,.6);}
+
+  footer{padding:36px 24px; color:var(--muted); font-size:0.9rem; max-width:880px; margin:0 auto;}
+
+  @media (max-width:620px){ .hero{grid-template-columns:1fr;} nav a{margin-left:12px; font-size:0.8rem;} }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+    .hero h1{clip-path:inset(0 0 0 0);} .hero .side{opacity:1; transform:none;}
+    .razor-line path{stroke-dashoffset:0;}
+    .reveal-el{opacity:1 !important; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">ÜLGÜC</div>
+  <nav><a href="#qiymetler">Qiymətlər</a><a href="#elaqe">Əlaqə</a></nav>
+</header>
+
+<div class="hero">
+  <h1>Səliqəli saç,<br>dəqiq üz xətti</h1>
+  <div class="side">1998-dən bəri klassik üsullarla, birbaşa ülgüc ilə saqqal düzəlişi.</div>
+</div>
+
+<div class="razor-line">
+  <svg viewBox="0 0 880 20" preserveAspectRatio="none"><path d="M0,10 L880,10"/></svg>
+</div>
+
+<section id="qiymetler">
+  <div class="section-title reveal-el">Xidmətlər</div>
+  <div class="price-row reveal-el">
+    <div><span class="name">Saç kəsimi</span><span class="time">25 dəq</span></div>
+    <div class="amount">12 ₼</div>
+  </div>
+  <div class="price-row reveal-el">
+    <div><span class="name">Saqqal düzəlişi (ülgüc)</span><span class="time">20 dəq</span></div>
+    <div class="amount">8 ₼</div>
+  </div>
+  <div class="price-row reveal-el">
+    <div><span class="name">Saç + saqqal</span><span class="time">40 dəq</span></div>
+    <div class="amount">18 ₼</div>
+  </div>
+  <div class="price-row reveal-el">
+    <div><span class="name">Uşaq saç kəsimi</span><span class="time">20 dəq</span></div>
+    <div class="amount">8 ₼</div>
+  </div>
+  <a class="book-btn" href="#elaqe">Növbə al</a>
+</section>
+
+<section id="elaqe">
+  <div class="section-title reveal-el">Əlaqə</div>
+  <p class="reveal-el" style="color:var(--muted)">Nizami küçəsi 45, Bakı<br>Bazar ertəsi–Şənbə: 10:00–20:00<br>+994 55 987 65 43</p>
+</section>
+
+<footer>© Ülgüc Berber Salonu</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal-el');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  els.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
